@@ -1,6 +1,8 @@
+" Config for plugin 'lightline'
+" https://github.com/itchyny/lightline.vim
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme' : 'wombat',
+      \ 'colorscheme' : 'Tomorrow_Night',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
