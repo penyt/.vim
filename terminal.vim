@@ -32,5 +32,3 @@ function! OpenFloatTerm()
         \ })
 endfunction
 
-nnoremap <leader>t :call OpenFloatTerm()<CR>
-
