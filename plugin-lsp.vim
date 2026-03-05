@@ -1,5 +1,12 @@
-let lspOpts = #{autoHighlightDiags: v:true}
+let lspOpts = #{
+    \   autoHighlightDiags: v:true,
+    \   autoComplete: v:true,
+    \   omniComplete: v:true,
+    \   useBufferCompletion: v:true,
+\}
+
 autocmd User LspSetup call LspOptionsSet(lspOpts)
+
 let s:mason_bin = expand('~/.local/share/nvim/mason/bin/')
 
 let lspServers = [

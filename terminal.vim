@@ -14,7 +14,6 @@ function! OpenFloatTerm()
 
     " 2. 啟動 Terminal
     " exit_cb: 當 Shell 退出時執行 FloatTermExit
-    " term_kill: 'kill' 確保 Buffer 消失時進程也被殺死
     noautocmd let buf = term_start(&shell, #{
         \ hidden: 1,
         \ term_finish: 'close',

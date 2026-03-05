@@ -47,3 +47,18 @@ let g:netrw_sort_direction = 'normal'
 let g:netrw_treeview = 2
 let g:netrw_winsize = 20
 autocmd BufLeave * if &filetype ==# 'netrw' | close | endif
+
+" Dictionary completion
+set spell
+set completeopt=menuone
+
+
+
+
+
+
+
+
+
+
+
