@@ -27,6 +27,7 @@ set clipboard=unnamed " copy to OS clipboard
 "   Ps = 6  -> steady bar (xterm).
 let &t_SI = "\e[6 q"  " SI: insert mode
 let &t_EI = "\e[2 q"  " EI: everything else
+set scrolloff=8
 
 " Indentation and tabs
 set tabstop=4
