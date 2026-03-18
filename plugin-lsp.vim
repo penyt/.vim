@@ -1,3 +1,7 @@
+let s:binary_dir = expand('~/.local/share/nvim/mason/bin/')
+
+
+
 let lspOpts = #{
     \   autoHighlightDiags: v:true,
     \   autoComplete: v:true,
@@ -7,27 +11,34 @@ let lspOpts = #{
 
 autocmd User LspSetup call LspOptionsSet(lspOpts)
 
-let s:mason_bin = expand('~/.local/share/nvim/mason/bin/')
 
-let lspServers = [
-    \#{
-	\   name: 'pyright',
-	\   filetype: 'python',
-    \   path: s:mason_bin . 'pyright-langserver',
-	\   args: ['--stdio'],
-    \   workspaceConfig: #{
-    \       python: #{
-    \           pythonPath: '/opt/homebrew/bin/python3'
-    \       }
-    \   }
-	\},
-    \#{
-    \   name: 'vimls',
-    \   filetype: 'vim',
-    \   path: s:mason_bin . 'vim-language-server',
-    \   args: ['--stdio'],
-    \},
-\]
+
+let lspServers = []
+
+if executable(s:binary_dir . 'pyright-langserver')
+    call add(lspServers, #{
+        \ name: 'pyright',
+        \ filetype: 'python',
+        \ path: s:binary_dir . 'pyright-langserver',
+        \ args: ['--stdio'],
+        \ workspaceConfig: #{
+        \   python: #{
+        \     pythonPath: '/opt/homebrew/bin/python3'
+        \   }
+        \ }
+    \})
+endif
+
+if executable(s:binary_dir . 'vim-language-server')
+    call add(lspServers, #{
+        \ name: 'vimls',
+        \ filetype: 'vim',
+        \ path: s:binary_dir . 'vim-language-server',
+        \ args: ['--stdio'],
+    \})
+endif
+
+
 autocmd User LspSetup call LspAddServer(lspServers)
 
 " Set omnifunc for completion

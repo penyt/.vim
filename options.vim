@@ -15,6 +15,7 @@ set relativenumber
 set timeoutlen=300
 set ttimeoutlen=10
 set clipboard=unnamed " copy to OS clipboard
+set hidden
 
 " Cursor
 "  Reference chart of values:

@@ -2,6 +2,7 @@
 " Plugin Manager: vim-plug (https://github.com/junegunn/vim-plug)
 " Installation: https://github.com/junegunn/vim-plug?tab=readme-ov-file#installation
 
+
 call plug#begin()
 Plug 'itchyny/lightline.vim'  " https://github.com/itchyny/lightline.vim
 Plug 'morhetz/gruvbox'        " https://github.com/morhetz/gruvbox
