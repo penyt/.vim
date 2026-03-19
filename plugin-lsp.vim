@@ -1,5 +1,6 @@
-let s:binary_dir = expand('~/.local/share/nvim/mason/bin/')
-
+let s:binary_dir = empty($LSP_BIN_DIR)
+    \ ? expand('~/.local/share/nvim/mason/bin/')
+    \ : expand($LSP_BIN_DIR)
 
 
 let lspOpts = #{
